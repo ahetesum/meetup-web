@@ -35,13 +35,11 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-export default function Register(props){  
+export default function PartDetails(props){  
 
   const classes = useStyles();
 
-  const onRegister=()=>{
-    props.history.push('/Participant')
-  }
+
 
    
 
@@ -52,7 +50,7 @@ return (
         <Avatar className={classes.avatar}>
         </Avatar>
         <Typography component="h1" variant="h5" gutterBottom>
-          Register
+          Paticipant Details
         </Typography>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
@@ -61,45 +59,52 @@ return (
                 autoComplete="name"
                 name="name"
                 variant="outlined"
-                required
                 fullWidth
                 id="name"
                 label="Name"
-                autoFocus
+                value="Ahetesum Ali Biswas"
+                InputProps={{
+                    readOnly: true,
+                }}
               />
             </Grid>
             <Grid item xs={12} >
               <TextField
                 variant="outlined"
-                required
                 fullWidth
                 id="age"
-                label="Age"
                 name="age"
-                autoComplete="lname"
+                label="Age"
+                value="35"
+                InputProps={{
+                    readOnly: true,
+                }}
               />
             </Grid>
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
-                required
                 fullWidth
                 id="dob"
-                label="Date od Birth"
                 name="dob"
-                autoComplete="dob"
-              />
+                label="Date of Birth"
+                value="29/12/1985"
+                InputProps={{
+                    readOnly: true,
+                }}             
+             />
             </Grid>
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
-                required
                 fullWidth
                 id="proffesion"
-                label="Profession"
                 name="profession"
-                autoComplete="profession"
-              />
+                label="Profession"
+                value="Doctor"
+                InputProps={{
+                    readOnly: true,
+                }}              />
             </Grid>
             <Grid item xs={12}>
               <TextField
@@ -109,8 +114,10 @@ return (
                 id="locality"
                 label="Locality"
                 name="locality"
-                autoComplete="locality"
-              />
+                value="New Bel Road"
+                InputProps={{
+                    readOnly: true,
+                }}                />
             </Grid>
             <Grid item xs={12}>
               <TextField
@@ -120,38 +127,36 @@ return (
                 id="noOfGuest"
                 label="No of Guest"
                 name="noOfGuest"
-                autoComplete="noOfGuest"
-              />
+                value="5"
+                InputProps={{
+                    readOnly: true,
+                }}                />
             </Grid>
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
-                required
                 fullWidth
                 multiline
                 rowsMax={4}
                 name="address"
                 label="Address" 
                 id="address"
-                autoComplete="current-password"
-              />
+                value="#08,Sri Sai Apartment, New Bel Road, Dollars Colony, 560094"
+                InputProps={{
+                    readOnly: true,
+                }}                />
             </Grid>
-            <Grid item xs={12}>
-              <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I agree with the rules and regulation of the organizer for participating in this event"
-              />
-            </Grid>
+           
           </Grid>
           <Button
             type="button"
             fullWidth
             variant="contained"
-            color="secondary"
+            color="primary"
             className={classes.submit}
-            onClick={onRegister}
+            onClick={()=>{props.history.goBack()}}
           >
-            Submit
+            Close
           </Button>
   
         </form>
