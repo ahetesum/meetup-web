@@ -1,24 +1,27 @@
 import logo from './logo.svg';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';  
+import Register from './pages/register/Register';  
+import Participant from './pages/participant/Participant';  
+import {Container ,Typography, AppBar,Toolbar, CssBaseline} from  '@material-ui/core';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+  <CssBaseline></CssBaseline>
+    <Router>  
+      <AppBar>
+        <Toolbar>
+       <Typography variant='h4'>Meetup RSVP Website</Typography> 
+        </Toolbar>
+      </AppBar>
+      <Switch>  
+      <Route exact path='/Register' component={Register} />  
+        <Route path='/Participant' component={Participant} />  
+        {/*   <Route path='/Studentlist' component={Studentlist} />   */}
+      </Switch>  
+  </Router>  
+  </>
   );
 }
 
