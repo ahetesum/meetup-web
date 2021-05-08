@@ -50,7 +50,7 @@ return (
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
         </Avatar>
-        <Typography component="h1" variant="h5">
+        <Typography component="h1" variant="h5" gutterBottom>
           Register
         </Typography>
         <form className={classes.form} noValidate>
@@ -127,8 +127,10 @@ return (
                 variant="outlined"
                 required
                 fullWidth
+                multiline
+                rowsMax={4}
                 name="address"
-                label="Address"
+                label="Address" 
                 id="address"
                 autoComplete="current-password"
               />
@@ -136,7 +138,7 @@ return (
             <Grid item xs={12}>
               <FormControlLabel
                 control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I want to receive inspiration, marketing promotions and updates via email."
+                label="I agree with the rules and regulation of the organizer for participating in this event"
               />
             </Grid>
           </Grid>
@@ -149,13 +151,7 @@ return (
           >
             Submit
           </Button>
-          <Grid container justify="flex-end">
-            <Grid item>
-              <Link href="#" variant="body2">
-                Already have an account? Sign in
-              </Link>
-            </Grid>
-          </Grid>
+  
         </form>
       </div>
 
