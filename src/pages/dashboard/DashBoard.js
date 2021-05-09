@@ -75,6 +75,7 @@ export default function DashBoard(props){
   const [locality, setLocality] = React.useState('');
   const [profession, setProfession] = React.useState('');
 
+
   const handleChangeAge = (event) => {
     setAge(event.target.value);
   };
@@ -88,6 +89,8 @@ export default function DashBoard(props){
   const doFilterData=()=>{
 
   }
+
+  console.log(props.participants)
 
 return (  
   <Container component="main" maxWidth="xs">

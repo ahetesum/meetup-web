@@ -4,7 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { makeServer } from './server/Server';
 
+if (process.env.NODE_ENV === 'development') {
+  makeServer({ environment: 'development' });
+} 
 ReactDOM.render(
   <React.StrictMode>
     <App />
