@@ -71,90 +71,104 @@ return (
         </Typography>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
-            <Grid item xs={12} >
+          <Grid item xs={2}>
+                <Typography align='justify' variant='body2'>Name</Typography>
+            </Grid>
+            <Grid item xs={10} >
               <TextField
                 variant="outlined"
                 fullWidth
                 id="name"
-                label="Name"
                 value={participant.name}
                 InputProps={{
                     readOnly: true,
                 }}
               />
             </Grid>
-            <Grid item xs={12} >
+            <Grid item xs={2}>
+                <Typography align='justify' variant='body2'>Age</Typography>
+            </Grid>
+            <Grid item xs={10} >
               <TextField
                 variant="outlined"
                 fullWidth
                 id="age"
                 name="age"
-                label="Age"
                 value={participant.age}
                 InputProps={{
                     readOnly: true,
                 }}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={2}>
+                <Typography align='justify' variant='body2'>DOB</Typography>
+            </Grid>
+            <Grid item xs={10}>
               <TextField
                 variant="outlined"
                 fullWidth
                 id="dob"
                 name="dob"
-                label="Date of Birth"
                 value={participant.dob}
                 InputProps={{
                     readOnly: true,
                 }}             
              />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={2}>
+                <Typography align='justify' variant='body2'>Profession</Typography>
+            </Grid>
+            <Grid item xs={10}>
               <TextField
                 variant="outlined"
                 fullWidth
                 id="proffesion"
                 name="profession"
-                label="Profession"
                 value={participant.profession}
                 InputProps={{
                     readOnly: true,
                 }}              />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={2}>
+                <Typography align='justify' variant='body2'>Locality</Typography>
+            </Grid>
+            <Grid item xs={10}>
               <TextField
                 variant="outlined"
                 required
                 fullWidth
                 id="locality"
-                label="Locality"
                 name="locality"
                 value={participant.locality}
                 InputProps={{
                     readOnly: true,
                 }}                />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={2}>
+                <Typography align='justify' variant='body2'>No Guest</Typography>
+            </Grid>
+            <Grid item xs={10}>
               <TextField
                 variant="outlined"
                 required
                 fullWidth
                 id="noOfGuest"
-                label="No of Guest"
                 name="noOfGuest"
                 value={participant.noOfGuest}
                 InputProps={{
                     readOnly: true,
                 }}                />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={2}>
+                <Typography align='justify' variant='body2'>Address</Typography>
+            </Grid>
+            <Grid item xs={10}>
               <TextField
                 variant="outlined"
                 fullWidth
                 multiline
                 rowsMax={4}
                 name="address"
-                label="Address" 
                 id="address"
                 value={participant.address}
                 InputProps={{

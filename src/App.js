@@ -18,7 +18,7 @@ function App() {
         </Toolbar>
       </AppBar>
       <Switch>  
-      <Route  path='/' component={DashBoard} />  
+      <Route exact path='/' component={DashBoard} />  
       <Route exact path='/DashBoard' component={DashBoard} />  
       <Route exact path='/Register' component={Register} />  
         <Route path='/Participant' component={Participant} />  
