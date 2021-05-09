@@ -124,10 +124,10 @@ return (
           value={age}
           onChange={handleChangeLocality}
         >
-          <MenuItem value={1}>Bel Road</MenuItem>
-          <MenuItem value={2}>MG Road</MenuItem>
-          <MenuItem value={3}>Sanjay Nagar</MenuItem>
-          <MenuItem value={4}>Marathalli</MenuItem>
+          <MenuItem value={1}>Bangalore</MenuItem>
+          <MenuItem value={2}>Mumbai</MenuItem>
+          <MenuItem value={3}>Delhi</MenuItem>
+          <MenuItem value={4}>Chennai</MenuItem>
         </Select>
         </FormControl>
       </Grid>

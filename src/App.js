@@ -1,11 +1,10 @@
-import logo from './logo.svg';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';  
+import { BrowserRouter as Router, Switch, Route, IndexRedirect } from 'react-router-dom';  
 import Register from './pages/register/Register';  
 import Participant from './pages/participant/Participant';  
 import PartDetails from './pages/part-details/PartiDetails';  
 import DashBoard from './pages/dashboard/DashBoard';  
 
-import {Container ,Typography, AppBar,Toolbar, CssBaseline} from  '@material-ui/core';
+import { Typography, AppBar,Toolbar, CssBaseline} from  '@material-ui/core';
 import './App.css';
 
 function App() {
@@ -19,6 +18,7 @@ function App() {
         </Toolbar>
       </AppBar>
       <Switch>  
+      <Route  path='/' component={DashBoard} />  
       <Route exact path='/DashBoard' component={DashBoard} />  
       <Route exact path='/Register' component={Register} />  
         <Route path='/Participant' component={Participant} />  

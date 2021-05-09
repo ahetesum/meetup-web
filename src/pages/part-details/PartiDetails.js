@@ -39,7 +39,24 @@ export default function PartDetails(props){
 
   const classes = useStyles();
 
+  let [participant, setParticipant] = React.useState('')
 
+
+
+  React.useEffect(() => {                          
+    axios.get('https://meetup-web.free.beeceptor.com/getAll')  
+    .then(response => {  
+        console.log(response.data[0])
+        //let item= response.data.find(x => x.id === props.match.params.id);
+        let item = response.data[props.match.params.id-1];
+            console.log(item)
+        setParticipant(item)
+
+    })  
+    .catch(function (error) {  
+        console.log(error);  
+    })  
+}, [setParticipant])
 
    
 
@@ -56,13 +73,11 @@ return (
           <Grid container spacing={2}>
             <Grid item xs={12} >
               <TextField
-                autoComplete="name"
-                name="name"
                 variant="outlined"
                 fullWidth
                 id="name"
                 label="Name"
-                value="Ahetesum Ali Biswas"
+                value={participant.name}
                 InputProps={{
                     readOnly: true,
                 }}
@@ -75,7 +90,7 @@ return (
                 id="age"
                 name="age"
                 label="Age"
-                value="35"
+                value={participant.age}
                 InputProps={{
                     readOnly: true,
                 }}
@@ -88,7 +103,7 @@ return (
                 id="dob"
                 name="dob"
                 label="Date of Birth"
-                value="29/12/1985"
+                value={participant.dob}
                 InputProps={{
                     readOnly: true,
                 }}             
@@ -101,7 +116,7 @@ return (
                 id="proffesion"
                 name="profession"
                 label="Profession"
-                value="Doctor"
+                value={participant.profession}
                 InputProps={{
                     readOnly: true,
                 }}              />
@@ -114,7 +129,7 @@ return (
                 id="locality"
                 label="Locality"
                 name="locality"
-                value="New Bel Road"
+                value={participant.locality}
                 InputProps={{
                     readOnly: true,
                 }}                />
@@ -127,7 +142,7 @@ return (
                 id="noOfGuest"
                 label="No of Guest"
                 name="noOfGuest"
-                value="5"
+                value={participant.noOfGuest}
                 InputProps={{
                     readOnly: true,
                 }}                />
@@ -141,7 +156,7 @@ return (
                 name="address"
                 label="Address" 
                 id="address"
-                value="#08,Sri Sai Apartment, New Bel Road, Dollars Colony, 560094"
+                value={participant.address}
                 InputProps={{
                     readOnly: true,
                 }}                />

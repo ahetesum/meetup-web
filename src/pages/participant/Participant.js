@@ -48,10 +48,43 @@ export default function Participant(props){
 
   const classes = useStyles();
 
+  let [participants, setParticipants] = React.useState('')
+
+
+
+  React.useEffect(() => {                          
+    axios.get('https://meetup-web.free.beeceptor.com/getAll')  
+    .then(response => {  
+        //console.log(response.data)
+        setParticipants(response.data)
+
+    })  
+    .catch(function (error) {  
+        console.log(error);  
+    })  
+}, [setParticipants])
+  
+
+  
 
   const goDetailsPage=(id)=>{
       props.history.push('/PartiDetails/'+id);
   }
+
+
+  const getLocalityName=(value)=>{
+    switch(value)
+    {
+        case 1:
+            return "Bangalore";
+            case 2:
+            return "Mumbai";
+            case 3:
+                return "Delhi";
+                case 4:
+                    return "Chennai";   
+    }
+}
 
    
 
@@ -78,17 +111,12 @@ return (
             </Grid>
             <Grid item xs={12} >
             <List className={classes.root}>
-            {[0, 1, 2, 3].map((value) => {
-        const labelId = `checkbox-list-secondary-label-${value}`;
+            {Object.values(participants).map((item) => {
+                 console.log('The Item is->'+item)
         return(
-                <ListItem key={value} onClick={()=> goDetailsPage(value)} button>
-                <ListItemAvatar>
-                <Avatar
-                    alt={`Avatar n°${value + 1}`}
-                    src={`/static/images/avatar/${value + 1}.jpg`}
-                />
-                </ListItemAvatar>
-                <ListItemText id={labelId} primary={`Line item ${value + 1}`} 
+               
+                <ListItem key={item.id}  onClick={()=> goDetailsPage(item.id)} >
+                    <ListItemText key={item.id} primary={item.name} 
                       secondary={
                         <React.Fragment>
                           <Typography
@@ -97,7 +125,7 @@ return (
                             className={classes.inline}
                             color="textPrimary"
                           >
-                            New Bel Road
+                            {getLocalityName(item.locality) }
                           </Typography>
                         </React.Fragment>
                       }
